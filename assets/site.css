@@ -1,16 +1,16 @@
 /* ===== ai_use 全站共享样式 =====
- * 深色主题。页面通过 <link> 引用本文件，并给 body 加 class="site-page"。
+ * 浅色阅读主题。页面通过 <link> 引用本文件，并给 body 加 class="site-page"。
  */
 
 :root {
-  --site-bg: #0b0e14;
-  --site-card: #161b28;
-  --site-line: #262f45;
-  --site-text: #e6ebf5;
-  --site-muted: #8b96ad;
-  --site-accent: #7c5cff;
-  --site-accent2: #00d4ff;
-  --site-green: #3ddc97;
+  --site-bg: #faf9f6;
+  --site-card: #ffffff;
+  --site-line: #e6e2d9;
+  --site-text: #2e2c28;
+  --site-muted: #6d6a61;
+  --site-accent: #6a4dff;
+  --site-accent2: #0e7490;
+  --site-green: #0f9d58;
   --site-nav-h: 52px;
 }
 
@@ -25,7 +25,7 @@
   align-items: center;
   gap: 4px;
   padding: 0 20px;
-  background: rgba(11, 14, 20, 0.92);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--site-line);
   z-index: 1000;
@@ -38,10 +38,7 @@
   font-size: 15px;
   margin-right: 18px;
   white-space: nowrap;
-  background: linear-gradient(90deg, var(--site-accent), var(--site-accent2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--site-accent);
   text-decoration: none;
 }
 
@@ -64,13 +61,13 @@
 
 .site-nav .item > a:hover {
   color: var(--site-text);
-  background: var(--site-card);
+  background: #f2efe8;
 }
 
 .site-nav .item.current > a {
-  color: var(--site-text);
-  background: var(--site-card);
-  box-shadow: inset 0 0 0 1px var(--site-line);
+  color: var(--site-accent);
+  background: #f2efe8;
+  font-weight: 600;
 }
 
 /* 阶段状态点 */
@@ -81,7 +78,7 @@
   border-radius: 50%;
   margin-left: 5px;
   vertical-align: middle;
-  background: #3a4358;
+  background: #d4cfc4;
 }
 .site-nav .dot.doing { background: var(--site-accent2); }
 .site-nav .dot.done { background: var(--site-green); }
@@ -97,7 +94,7 @@
   border: 1px solid var(--site-line);
   border-radius: 10px;
   padding: 6px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 24px rgba(60, 55, 40, 0.12);
 }
 
 .site-nav .item:hover .menu,
@@ -107,7 +104,7 @@
 
 .site-nav .menu a {
   display: block;
-  color: #c3cbdd;
+  color: var(--site-text);
   font-size: 13px;
   padding: 8px 12px;
   border-radius: 7px;
@@ -115,12 +112,12 @@
 }
 
 .site-nav .menu a:hover {
-  background: var(--site-bg);
-  color: var(--site-text);
+  background: #f7f4ee;
+  color: var(--site-accent);
 }
 
 .site-nav .menu .empty {
-  color: #5d6880;
+  color: #a8a396;
   font-size: 12px;
   padding: 8px 12px;
 }

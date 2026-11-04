@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 学习笔记 · 首页</title>
+<link rel="stylesheet" href="./assets/site.css">
+<script src="./assets/site.js"></script>
+<style>
+  body { background: var(--site-bg); color: var(--site-text);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    margin: 0; line-height: 1.7; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 56px 28px 100px; }
+  .hero { padding: 40px 0 20px; }
+  .hero .badge { display: inline-block; font-size: 12px; color: var(--site-accent2);
+    border: 1px solid rgba(0,212,255,.4); padding: 4px 14px; border-radius: 999px;
+    margin-bottom: 18px; background: rgba(0,212,255,.06); }
+  .hero h1 { font-size: 40px; margin: 0 0 14px; line-height: 1.25;
+    background: linear-gradient(100deg, #fff 30%, var(--site-accent) 70%, var(--site-accent2));
+    -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero p { color: #c3cbdd; font-size: 16px; max-width: 720px; margin: 0 0 8px; }
+
+  h2 { font-size: 22px; margin: 48px 0 18px; }
+  .grid { display: grid; gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  .card { background: var(--site-card); border: 1px solid var(--site-line);
+    border-radius: 14px; padding: 20px 22px; transition: .2s; }
+  .card:hover { border-color: #35415e; transform: translateY(-2px); }
+  .card h3 { font-size: 15.5px; margin: 0 0 6px; display: flex;
+    align-items: center; gap: 8px; flex-wrap: wrap; }
+  .card p { font-size: 13.5px; color: var(--site-muted); margin: 0 0 10px; }
+  .st { font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 999px; }
+  .st.doing { background: rgba(0,212,255,.12); color: #7fe6ff;
+    border: 1px solid rgba(0,212,255,.35); }
+  .st.todo { background: rgba(139,150,173,.15); color: #aab6cc;
+    border: 1px solid rgba(139,150,173,.3); }
+  .st.done { background: rgba(61,220,151,.12); color: #8bf0c4;
+    border: 1px solid rgba(61,220,151,.35); }
+  .card ul { margin: 0; padding-left: 18px; font-size: 13.5px; }
+  .card ul a { color: var(--site-accent2); text-decoration: none; }
+  .card ul a:hover { text-decoration: underline; }
+  .card .empty { color: #5d6880; font-size: 13px; }
+
+  .loop { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .loop .node { background: var(--site-card); border: 1px solid var(--site-line);
+    border-radius: 10px; padding: 10px 16px; font-size: 13.5px; }
+  .loop .node b { color: var(--site-accent2); margin-right: 6px; }
+  .loop .arrow { color: #5d6880; }
+
+  footer { margin-top: 72px; padding-top: 20px; border-top: 1px solid var(--site-line);
+    color: #5d6880; font-size: 12.5px; }
+  footer a { color: var(--site-muted); }
+</style>
+</head>
+<body class="site-page">
+<div class="wrap">
+
+  <div class="hero">
+    <div class="badge">个人 AI 学习知识站点</div>
+    <h1>AI 学习笔记</h1>
+    <p>记录我在 AI 使用方面的学习过程与成果 —— 学习在对话中发生，这个站点是学习成果的沉淀：
+       可复习、可回顾、持续生长。</p>
+  </div>
+
+  <h2>📍 学习路线 · 六阶段</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>阶段一 · 提示词工程 <span class="st todo">未开始</span></h3>
+      <p>写出清晰、可控的提示词，理解模型的能力与边界。</p>
+      <div class="empty">还没有笔记</div>
+    </div>
+    <div class="card">
+      <h3>阶段二 · AI 编程助手 <span class="st doing">进行中</span></h3>
+      <p>熟练使用 AI 编程工具完成真实开发任务。</p>
+      <ul>
+        <li><a href="topics/ai-coding/superpowers/index.html">⚡ Superpowers 完全指南</a> — 让 AI 像资深工程师一样工作的技能框架</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>阶段三 · Agent <span class="st todo">未开始</span></h3>
+      <p>理解 Agent 的工作原理，搭建简单的自动化 Agent。</p>
+      <div class="empty">还没有笔记</div>
+    </div>
+    <div class="card">
+      <h3>阶段四 · RAG <span class="st todo">未开始</span></h3>
+      <p>理解检索增强生成，为自己的资料搭建问答能力。</p>
+      <div class="empty">还没有笔记</div>
+    </div>
+    <div class="card">
+      <h3>阶段五 · 多模态 <span class="st todo">未开始</span></h3>
+      <p>掌握文本之外的 AI 能力：图像、语音、视频/文档理解。</p>
+      <div class="empty">还没有笔记</div>
+    </div>
+    <div class="card">
+      <h3>阶段六 · 自动化集成 <span class="st todo">未开始</span></h3>
+      <p>把 AI 能力嵌入日常工作流：定时任务、工具集成、成果复盘。</p>
+      <div class="empty">还没有笔记</div>
+    </div>
+  </div>
+
+  <h2>🔁 学习方式 · 五步闭环</h2>
+  <div class="loop">
+    <div class="node"><b>1</b>选题</div><span class="arrow">→</span>
+    <div class="node"><b>2</b>引导学习</div><span class="arrow">→</span>
+    <div class="node"><b>3</b>答疑纠正</div><span class="arrow">→</span>
+    <div class="node"><b>4</b>生成页面</div><span class="arrow">→</span>
+    <div class="node"><b>5</b>复习回顾</div>
+  </div>
+  <p style="color:var(--site-muted);font-size:13.5px;margin-top:14px">
+    每轮对话学习结束后，对话成果按统一规范整理成笔记，再生成站点页面并挂入上方导航。
+    复习时发现遗忘，就回到对话补学。
+  </p>
+
+  <footer>
+    AI 学习笔记 · 纯静态站点，双击任意页面即可离线阅读 ·
+    <a href="docs/roadmap.md">学习路线图</a> ·
+    <a href="docs/conventions.md">写作与站点规范</a>
+  </footer>
+
+</div>
+</body>
+</html>

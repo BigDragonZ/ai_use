@@ -1,0 +1,136 @@
+/* ===== ai_use 全站共享样式 =====
+ * 深色主题。页面通过 <link> 引用本文件，并给 body 加 class="site-page"。
+ */
+
+:root {
+  --site-bg: #0b0e14;
+  --site-card: #161b28;
+  --site-line: #262f45;
+  --site-text: #e6ebf5;
+  --site-muted: #8b96ad;
+  --site-accent: #7c5cff;
+  --site-accent2: #00d4ff;
+  --site-green: #3ddc97;
+  --site-nav-h: 52px;
+}
+
+/* 吸顶导航 */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--site-nav-h);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 20px;
+  background: rgba(11, 14, 20, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--site-line);
+  z-index: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+.site-nav .brand {
+  font-weight: 800;
+  font-size: 15px;
+  margin-right: 18px;
+  white-space: nowrap;
+  background: linear-gradient(90deg, var(--site-accent), var(--site-accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-decoration: none;
+}
+
+.site-nav .item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.site-nav .item > a {
+  color: var(--site-muted);
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: 0.15s;
+}
+
+.site-nav .item > a:hover {
+  color: var(--site-text);
+  background: var(--site-card);
+}
+
+.site-nav .item.current > a {
+  color: var(--site-text);
+  background: var(--site-card);
+  box-shadow: inset 0 0 0 1px var(--site-line);
+}
+
+/* 阶段状态点 */
+.site-nav .dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-left: 5px;
+  vertical-align: middle;
+  background: #3a4358;
+}
+.site-nav .dot.doing { background: var(--site-accent2); }
+.site-nav .dot.done { background: var(--site-green); }
+
+/* 下拉菜单 */
+.site-nav .menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: var(--site-card);
+  border: 1px solid var(--site-line);
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+.site-nav .item:hover .menu,
+.site-nav .item:focus-within .menu {
+  display: block;
+}
+
+.site-nav .menu a {
+  display: block;
+  color: #c3cbdd;
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 7px;
+  text-decoration: none;
+}
+
+.site-nav .menu a:hover {
+  background: var(--site-bg);
+  color: var(--site-text);
+}
+
+.site-nav .menu .empty {
+  color: #5d6880;
+  font-size: 12px;
+  padding: 8px 12px;
+}
+
+/* 使用共享导航的页面：为吸顶栏让出空间 */
+body.site-page {
+  padding-top: var(--site-nav-h);
+}
+
+@media (max-width: 900px) {
+  .site-nav { overflow-x: auto; }
+  .site-nav .menu { position: fixed; left: 12px; right: 12px; }
+}

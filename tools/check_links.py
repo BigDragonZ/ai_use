@@ -8,11 +8,15 @@
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
+import re
 from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
 
 SKIP_PREFIXES = ("http://", "https://", "mailto:", "tel:", "javascript:", "data:")
+
+NAV_FILE = ROOT / "assets" / "site.js"
+NAV_HREF_RE = re.compile(r'href:\s*"([^"]+)"')
 
 
 class LinkCollector(HTMLParser):
@@ -61,10 +65,27 @@ def main():
             failures += 1
             rel = path.relative_to(ROOT)
             print("BROKEN {}:{}  {}  ->  {}".format(rel, line, url, resolved))
+    # 导航数据校验：site.js 中 SITE_NAV 注册的每个链接必须真实存在
+    nav_checked = 0
+    if NAV_FILE.exists():
+        for lineno, line_text in enumerate(
+            NAV_FILE.read_text(encoding="utf-8").splitlines(), 1
+        ):
+            for match in NAV_HREF_RE.finditer(line_text):
+                nav_checked += 1
+                href = match.group(1)
+                target = (ROOT / unquote(href)).resolve()
+                if not target.exists():
+                    failures += 1
+                    print(
+                        "BROKEN assets/site.js:{}  {}  ->  {}".format(
+                            lineno, href, target
+                        )
+                    )
     if failures:
         print("\nFAIL: {} broken link(s) in {} file(s)".format(failures, total))
         return 1
-    print("OK: {} file(s) checked, all links valid".format(total))
+    print("OK: {} html file(s) + {} nav link(s) checked, all valid".format(total, nav_checked))
     return 0
 
 

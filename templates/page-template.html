@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>主题标题 · AI 学习笔记</title>
+<!--
+  使用说明：
+  1. 复制本文件到 topics/<阶段slug>/<主题slug>/index.html
+  2. 按目录深度调整下面两行的 ../ 前缀（topics/<a>/<b>/ 下应为 ../../../）
+  3. 在 assets/site.js 的 SITE_NAV 中注册本主题，并更新首页对应阶段卡片
+  4. 运行 python3 tools/check_links.py 验证
+-->
+<link rel="stylesheet" href="../assets/site.css">
+<script src="../assets/site.js"></script>
+<style>
+  body { background: var(--site-bg); color: var(--site-text);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    margin: 0; line-height: 1.7; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 56px 28px 100px; }
+  .meta { color: var(--site-muted); font-size: 13px; margin-bottom: 24px; }
+  h1 { font-size: 32px; margin: 0 0 10px; }
+  h2 { font-size: 20px; margin: 36px 0 12px; }
+  p, li { color: #c3cbdd; font-size: 15px; }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; font-size: .88em;
+    background: #0e1420; border: 1px solid var(--site-line);
+    border-radius: 6px; padding: 1px 7px; color: #9ee7ff; }
+  a { color: var(--site-accent2); }
+</style>
+</head>
+<body class="site-page">
+<div class="wrap">
+
+  <h1>主题标题</h1>
+  <div class="meta">日期：YYYY-MM-DD ｜ 所属阶段：阶段X · 阶段名</div>
+
+  <h2>学习目标</h2>
+  <p>这篇解决什么问题？学完能做什么？</p>
+
+  <h2>核心内容</h2>
+  <p>正文……</p>
+
+  <h2>复习清单</h2>
+  <ul>
+    <li>问题 1</li>
+    <li>问题 2</li>
+  </ul>
+
+</div>
+</body>
+</html>

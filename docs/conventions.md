@@ -37,3 +37,20 @@
 - 代码块注明语言，如 ` ```python `。
 - 外部资料用 Markdown 链接，注明来源名称。
 - 图片放在同目录的 `assets/` 子目录，用相对路径引用。
+
+## 站点页面规范
+
+站点是纯静态的（无构建工具），所有页面共享统一导航与样式。生成新主题页面时必须遵守：
+
+1. **位置**：`topics/<阶段slug>/<主题slug>/index.html`。阶段 slug 取自路线图：
+   `prompt-engineering` / `ai-coding` / `agent` / `rag` / `multimodal` / `automation`。
+2. **继承导航**：从 `templates/page-template.html` 复制骨架开始。必须包含两行引用
+   （`assets/site.css` 和 `assets/site.js`，注意按目录深度调整 `../` 前缀），
+   且 `<body>` 带 `class="site-page"`。
+3. **注册导航**：在 `assets/site.js` 的 `SITE_NAV` 中找到对应阶段，把新主题加入
+   其 `topics` 数组；阶段开始有内容后把 `status` 从 `todo` 改为 `doing`，
+   阶段完成改为 `done`。
+4. **更新首页**：首页 `index.html` 对应阶段卡片中补充新主题的链接与一句话简介。
+5. **验证**：完成后必须运行 `python3 tools/check_links.py`，全部通过才算完成。
+
+导航和首页的进度状态要与 `docs/roadmap.md` 的阶段状态表保持一致。

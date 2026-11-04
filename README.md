@@ -24,14 +24,21 @@
 ```
 .
 ├── README.md               # 项目说明（本文件）
+├── index.html              # 站点首页（六阶段进度 + 导航）
+├── assets/                 # 全站共享样式与导航（site.css / site.js）
+├── topics/                 # 站点主题页面（topics/<阶段slug>/<主题slug>/）
+│   └── ai-coding/superpowers/   # Superpowers 完全指南
+├── tools/
+│   └── check_links.py      # 全站链接检查
 ├── docs/
 │   ├── roadmap.md          # 学习路线图
 │   ├── conventions.md      # 写作与整理规范
+│   ├── superpowers/        # 设计文档与实施计划（Superpowers 工作流产出）
 │   └── notes/              # 学习笔记（按主题分目录）
 │       └── prompt-engineering/   # 示例主题目录
 ├── templates/
-│   └── note-template.md    # 新笔记模板
-└── site/                   # （后续）静态站点配置
+│   ├── note-template.md    # 新笔记模板
+│   └── page-template.html  # 新站点页面模板
 ```
 
 ## 站点页面如何产生
@@ -43,9 +50,10 @@
 ## 当前进度
 
 - [x] 项目文档骨架搭建
+- [x] 站点骨架：首页 + 统一导航 + 页面规范（2026-11-04）
+- [x] 阶段二首个主题：Superpowers 完全指南（2026-11-04）
 - [ ] 学习路线图确认
 - [ ] 第一个主题：提示词工程
-- [ ] 选择并接入静态站点生成器
 - [ ] 部署站点
 
 详见 [docs/roadmap.md](docs/roadmap.md)。
